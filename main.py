@@ -1,6 +1,9 @@
+import HW7.my_string_library
+
+
 def ex_1():
     user_input = input("Please enter a word phrase, or sequence to check if it is a palindrome or not: ").lower().replace(" ","")
-    reverse_input = user_input[len(user_input)::-1]
+    reverse_input = HW7.my_string_library.reversed_string(user_input)
     return True if user_input == reverse_input else False
 
 def ex_2():
