@@ -1,23 +1,29 @@
-import HW7.my_string_library
+import my_library.my_library
 
 
 def ex_1():
     user_input = input("Please enter a word phrase, or sequence to check if it is a palindrome or not: ").lower().replace(" ","")
-    reverse_input = HW7.my_string_library.reversed_string(user_input)
+    reverse_input = my_library.my_string_library.reversed_string(user_input)
     return True if user_input == reverse_input else False
 
 def ex_2():
-    pass
+    user_input = float(input("Please enter a number to check if it is prime of not: "))
+    return my_library.my_library.isprime(user_input)
 
+def ex_3():
+    user_input = int(input("Please enter a number to check if it is perfect of not: "))
+    return my_library.my_library.is_perfect_number(user_input)
 
 if __name__ == '__main__':
     # We can store the functions as values in a dict
     exercises_map = {
         1: ex_1,
-        2: ex_2
+        2: ex_2,
+        3: ex_3
     }
     print('Type the number of the exercise to test:')
     print('1: Palindrome exercise')
     print('2: Prime number exercise')
+    print('3: Perfect number exercise')
     ex_nr = int(input('Exercise number: '))
     print(exercises_map[ex_nr]())  # Executing the function at the selected number
