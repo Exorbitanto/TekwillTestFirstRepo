@@ -3,15 +3,28 @@ from my_library import dict_tools, string_tools, numeric_tools
 def ex_1():
     user_input = input("Please enter a word phrase, or sequence to check if it is a palindrome or not: ").lower().replace(" ","")
     reverse_input = string_tools.string_reversed(user_input)
-    return True if user_input == reverse_input else False
+    print(True if user_input == reverse_input else False)
 
 def ex_2():
     user_input = float(input("Please enter a number to check if it is prime of not: "))
-    return numeric_tools.number_isprime(user_input)
+    print(numeric_tools.number_isprime(user_input))
 
 def ex_3():
     user_input = int(input("Please enter a number to check if it is perfect of not: "))
-    return numeric_tools.number_is_perfect(user_input)
+    print(numeric_tools.number_is_perfect(user_input))
+    user_input2 = int(input("Please enter how many perfect numbers you need: "))
+    while user_input2 > 4:
+        user_input2 = int(input("The time needed for the 5-th perfect number exceeds reason, please enter a valur from 1 to 4: "))
+
+    list_of_perfect_numbers = list()
+    i = 1
+    while len(list_of_perfect_numbers) < user_input2:
+        if numeric_tools.number_is_perfect(i):
+            list_of_perfect_numbers.append(i)
+        i += 1
+        if len(list_of_perfect_numbers) == user_input2:
+            print(f"List of perfect numbers are: {list_of_perfect_numbers}")
+            break
 
 def ex_4():
     user_input = input("Please enter a string: ")
@@ -34,7 +47,4 @@ if __name__ == '__main__':
     print('3: Perfect number exercise')
     print('4: String information')
     ex_nr = int(input('Exercise number: '))
-    if ex_nr != 4:
-        print(exercises_map[ex_nr]())  # Executing the function at the selected number
-    else:
-        exercises_map[ex_nr]()  # Executing the function at the selected number
+    exercises_map[ex_nr]()  # Executing the function at the selected number
