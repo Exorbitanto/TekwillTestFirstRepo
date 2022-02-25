@@ -14,7 +14,7 @@ def ex_3():
     print(numeric_tools.number_is_perfect(user_input))
     user_input2 = int(input("Please enter how many perfect numbers you need: "))
     while user_input2 > 4:
-        user_input2 = int(input("The time needed for the 5-th perfect number exceeds reason, please enter a valur from 1 to 4: "))
+        user_input2 = int(input("The time needed for the 5-th perfect number exceeds reason, please enter a value from 1 to 4: "))
 
     list_of_perfect_numbers = list()
     i = 1

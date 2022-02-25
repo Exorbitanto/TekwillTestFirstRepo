@@ -10,3 +10,24 @@ def number_is_perfect(number: int):
         if (number % i == 0):
             sum1 = sum1 + i
     return True if (sum1 == number) else False
+
+def get_int_input(text: str):
+    numeric_value = None
+    while numeric_value == None:
+        try:
+            numeric_value = int(input(text))
+            return numeric_value
+        except ValueError:
+            print("You failed to enter an integer, please try again.")
+
+def get_float_input(text: str):
+    numeric_value = None
+    while numeric_value == None:
+        try:
+            numeric_value = float(input(text))
+            return numeric_value
+        except ValueError:
+            print("You failed to enter a numeric value, please try again.")
+
+
+
