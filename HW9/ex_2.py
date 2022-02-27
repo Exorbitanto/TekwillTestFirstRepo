@@ -1,5 +1,6 @@
 import json
 from builtins import sorted
+from datetime import datetime
 
 from my_library.numeric_tools import *
 
@@ -28,6 +29,18 @@ def print_highest_paid_imployees(my_dict:dict, n:int):
                 print(f"{dict_el['name']} | {dict_el['position']} | {dict_el['salary']} | {dict_el['employee_from']}")
         index += 1
 
+def print_longest_time_in_company_imployees(my_dict:dict, n:int):
+    time_in_company = list()
+    for dict_el in my_dict:
+        time_in_company.append(datetime.strptime(dict_el["employee_from"],'%m/%d/%Y'))
+    time_in_company = sorted(time_in_company)
+    index = 0
+    for i in range(n):
+        for dict_el in my_dict:
+            if time_in_company[index] == datetime.strptime(dict_el["employee_from"],'%m/%d/%Y'):
+                print(f"{dict_el['name']} | {dict_el['position']} | {dict_el['salary']} | {dict_el['employee_from']}")
+        index += 1
+
 
 file = open("ex_2.json", "r")
 data = json.loads(file.read())
@@ -52,4 +65,4 @@ elif option == 4:
 elif option == 5:
     print_highest_paid_imployees(data,10)
 elif option == 6:
-    pass
+    print_longest_time_in_company_imployees(data,10)
