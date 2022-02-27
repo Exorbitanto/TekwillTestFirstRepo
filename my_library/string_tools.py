@@ -7,9 +7,15 @@ def string_to_words_set(text:str):
     return set(string_eliminate_punctuation(text).split(" "))
 
 def string_eliminate_punctuation(text:str):
-    punctuation_marks = [".",",","!","?","-",";",":","'","(",")","[","]"]
-    for punctuation_mark in punctuation_marks:
-        text.replace(punctuation_mark, "")
+    punctuation_marks = string.punctuation
+    punctuation_list = list()
+    for letter in punctuation_marks:
+        punctuation_list.append(letter)
+    punctuation_list.append("\n")
+    for punctuation_mark in punctuation_list:
+        text = text.replace(punctuation_mark," ")
+    text = text.replace("  "," ")
+    text = text.strip()
     return text
 
 def string_punctuation_marks(text:str):

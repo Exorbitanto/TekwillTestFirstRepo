@@ -1,20 +1,10 @@
 import json
+from my_library.file_tools import get_list_from_json_file
+
+from my_library.file_tools import get_list_from_json_file
 from my_library.numeric_tools import get_int_input
 
 file_name = "ex_5_dishes.json"
-
-def get_list_from_json_file(file_name):
-    try:
-        file = open(file_name, 'r')
-        text = file.read()
-        file.close()
-        try:
-            return json.loads(text)
-        except Exception:
-            return list()
-    except FileNotFoundError:
-        file = open(file_name, 'w+')
-        file.close()
 
 def list_all_dishes():
     my_list = get_list_from_json_file(file_name)
