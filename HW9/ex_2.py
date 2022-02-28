@@ -1,7 +1,6 @@
 import json
 from builtins import sorted
 from datetime import datetime
-
 from my_library.numeric_tools import *
 
 def print_list_of_values_from_list_of_dicts(my_dict:dict,key_name:str):
@@ -60,7 +59,7 @@ while option < 1 or option > 6:
     elif option == 2:
         print_list_of_values_from_list_of_dicts(data, "position")
     elif option == 3:
-        print(f"Total slary amount: {calculate_total_monthly_salary(data)}")
+        print(f"Total salary amount: {calculate_total_monthly_salary(data)}")
     elif option == 4:
         tax_rate = get_float_input("Please enter the current salary tax rate (%): ")
         print(calculate_texes_per_month(data, tax_rate))
