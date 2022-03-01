@@ -8,7 +8,9 @@ class HumanWithPet:
         self.list_of_pets = list()
 
     def __str__(self):
-        if len(self.list_of_pets) == 1:
+        if len(self.list_of_pets) == 0:
+            return f"{self.human_being.get_full_name()}, age {self.human_being.get_age()} with no pets, unfortunately."
+        elif len(self.list_of_pets) == 1:
             return f"{self.human_being.get_full_name()}, age {self.human_being.get_age()} with a pet: {self.list_of_pets[0]}"
         else:
             return f"{self.human_being.get_full_name()}, age {self.human_being.get_age()} with {len(self.list_of_pets)} pets: {', '.join([str(pet) for pet in self.list_of_pets])}"
