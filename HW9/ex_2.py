@@ -40,6 +40,19 @@ def print_longest_time_in_company_imployees(my_dict:dict, n:int):
                 print(f"{dict_el['name']} | {dict_el['position']} | {dict_el['salary']} | {dict_el['employee_from']}")
         index += 1
 
+def add_new_employee(data):
+    new_employee = {
+        "name": input("Enter the name:"),
+        "position": input("Enter the position:"),
+        "salary": get_float_input("Enter the salary:"),
+        "employee_from": input("Enter the employment date:"),
+    }
+    data.append(new_employee)
+    data = json.dumps(data)
+    file = open("ex_2_positions.json", "w")
+    file.write(data)
+
+
 
 file = open("ex_2.json", "r")
 data = json.loads(file.read())
@@ -50,10 +63,12 @@ print("3: Calculate the amount of salary the company has to pay per month in tot
 print("4: Calculate the amount of money the company has to pay in taxes per month. (Tax % Value is input from the console)")
 print("5: Display information for the top 10 highest paid employees (name, position, salary, employment_start_date) from highest paid to lower.")
 print("6: Display information for the top 10 employees with the longest time in the company (name, position, salary, employment_start_date) from highest to lower.")
+print("7: Add an employee.")
+
 
 option = 0
-while option < 1 or option > 6:
-    option = get_int_input("Please choose what to do (1-6) :")
+while option < 1 or option > 7:
+    option = get_int_input("Please choose what to do (1-7) :")
     if option == 1:
         print_list_of_values_from_list_of_dicts(data, "name")
     elif option == 2:
@@ -67,3 +82,6 @@ while option < 1 or option > 6:
         print_highest_paid_imployees(data,10)
     elif option == 6:
         print_longest_time_in_company_imployees(data,10)
+    elif option == 7:
+        add_new_employee(data)
+
