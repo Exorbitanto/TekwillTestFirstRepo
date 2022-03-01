@@ -11,13 +11,7 @@ class HumanWithPet:
         if len(self.list_of_pets) == 1:
             return f"{self.human_being.get_full_name()}, age {self.human_being.get_age()} with a pet: {self.list_of_pets[0]}"
         else:
-            pets_str = str()
-            for pet in self.list_of_pets:
-                if not pets_str:
-                    pets_str = pets_str + str(pet)
-                else:
-                    pets_str = pets_str + ", " + str(pet)
-            return f"{self.human_being.get_full_name()}, age {self.human_being.get_age()} with {len(self.list_of_pets)} pets: {pets_str}"
+            return f"{self.human_being.get_full_name()}, age {self.human_being.get_age()} with {len(self.list_of_pets)} pets: {', '.join([str(pet) for pet in self.list_of_pets])}"
 
     def adopt_new_pet(self, pet):
         self.list_of_pets.append(pet)

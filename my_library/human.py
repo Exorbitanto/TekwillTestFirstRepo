@@ -1,8 +1,9 @@
 from datetime import date, datetime
 
+
 class Human:
 
-    def __init__(self, first_name, last_name, date_of_birth = None):
+    def __init__(self, first_name, last_name, date_of_birth=None):
         self.first_name = first_name
         self.last_name = last_name
         self.date_of_birth = date_of_birth
@@ -14,4 +15,3 @@ class Human:
         today = date.today()
         born_date = datetime.strptime(self.date_of_birth, "%d/%M/%Y")
         return today.year - born_date.year - ((today.month, today.day) < (born_date.month, born_date.day))
-
