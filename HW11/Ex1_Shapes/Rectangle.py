@@ -1,13 +1,20 @@
 from Shape import Shape
 
+
 class Rectangle(Shape):
 
-    def __init__(self, width =1 , length =1 ):
-        self.width = width
-        self.length = length
+    def __init__(self, width=1, length=1):
+        self._width = width
+        self._length = length
 
-    def get_lengh(self):
-        return self.length
+    def get_length(self):
+        return self._length
 
-    def set_lengh(self, length):
-        self.length = length
+    def get_width(self):
+        return self._width
+
+    def set_length(self, length):
+        self._length = length
+
+    def set_width(self, width=1):
+        self._width = width
