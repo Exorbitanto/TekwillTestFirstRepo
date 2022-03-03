@@ -6,3 +6,6 @@ my_NumberList.append(2022)
 print(my_NumberList)
 my_NumberList.extend([3022,4022])
 print(my_NumberList)
+
+print(my_NumberList.get_sum())
+print(my_NumberList.get_average())
