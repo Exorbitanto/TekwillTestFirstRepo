@@ -1,6 +1,6 @@
 class Shape:
 
-    def __init__(self, inner_color, border_color):
+    def __init__(self, inner_color=None, border_color=None):
         self._inner_color = inner_color
         self._border_color = border_color
 
@@ -14,4 +14,4 @@ class Shape:
         self._inner_color = inner_color
 
     def set_border_color(self, border_color):
-        self._inner_color = border_color
+        self._border_color = border_color

@@ -3,7 +3,8 @@ from Shape import Shape
 
 class Rectangle(Shape):
 
-    def __init__(self, width=1, length=1):
+    def __init__(self, width=1, length=1, inner_color=None, border_color=None):
+        super().__init__(inner_color, border_color)
         self._width = width
         self._length = length
 
