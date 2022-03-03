@@ -7,5 +7,5 @@ print(my_NumberList)
 my_NumberList.extend([3022,4022])
 print(my_NumberList)
 
-print(my_NumberList.get_sum())
-print(my_NumberList.get_average())
+print(f"The sum is: {my_NumberList.get_sum()}")
+print(f"The average is: {my_NumberList.get_average()}")
