@@ -29,5 +29,9 @@ def get_float_input(text: str):
         except ValueError:
             print("You failed to enter a numeric value, please try again.")
 
+def verify_if_value_is_positive(number:float):
+    if number < 0:
+        raise ValueError("The object property cannot be negative")
+    return True
 
 

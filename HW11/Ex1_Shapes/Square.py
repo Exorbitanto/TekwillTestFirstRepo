@@ -8,3 +8,4 @@ class Square(Rectangle):
         super().__init__(width, length)
         # self._width = width
         # self._length = length
+
