@@ -5,6 +5,27 @@ import math
 
 class Circle(Shape):
 
+    @property
+    def radius(self):
+        return self._radius
+
+    @radius.setter
+    def radius(self, radius):
+        if verify_if_value_is_positive(radius):
+            self._radius = radius
+
+    @property
+    def area(self):
+        return self._radius ** 2 * math.pi
+
+    @staticmethod
+    def is_circle(other):
+        return isinstance(other, Circle)
+
+    @staticmethod
+    def is_a_number(other):
+        return type(other) == int or type(other) == float
+
     def __init__(self, inner_color=None, border_color=None, radius=1):
         super().__init__(inner_color, border_color)
         if verify_if_value_is_positive(radius):
@@ -34,24 +55,11 @@ class Circle(Shape):
         return Circle(self.inner_color, self.border_color, self.radius - other.radius)
 
     def __mul__(self, other):
-        if not isinstance(other, Circle) and type(other) != int and type(other) != float:
+        if not Circle.is_circle(other) and not Circle.is_a_number(other):
             raise Exception("The multiplier should be a number of another object of the same type.")
-        if type(other) != int or type(other) != float:
+        if Circle.is_a_number(other):
             return Circle(self.inner_color, self.border_color, self.radius * other)
         else:
             return Circle(self.inner_color, self.border_color, self.radius * other.radius)
-
-    @property
-    def radius(self):
-        return self._radius
-
-    @radius.setter
-    def radius(self, radius):
-        if verify_if_value_is_positive(radius):
-            self._radius = radius
-
-    @property
-    def area(self):
-        return self._radius ** 2 * math.pi
 
 

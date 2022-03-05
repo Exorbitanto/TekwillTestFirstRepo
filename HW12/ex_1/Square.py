@@ -18,7 +18,7 @@ class Square(Rectangle):
         return super().__eq__(other)
 
     def __str__(self):
-        return f"{self.inner_color} and {self.border_color} square with the lenth of {self.length} the width of {self.width} and the area of {self.area}"
+        return super().__str__()
 
     def __add__(self, other):
         return super().__mul__(other)

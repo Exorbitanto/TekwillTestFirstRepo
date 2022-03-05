@@ -49,7 +49,7 @@ class Rectangle(Shape):
                 return False
 
     def __str__(self):
-        return f"{self.inner_color} and {self.border_color} rectangle with the lenth of {self.length} the width of {self.width} and the area of {self.area}"
+        return f"{self.inner_color} and {self.border_color} rectangle with the length of {self.length} the width of {self.width} and the area of {self.area}"
 
     def __add__(self, other):
         if Rectangle.is_resctangle(other):
