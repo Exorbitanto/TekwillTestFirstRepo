@@ -15,7 +15,7 @@ class FileHelper:
             raise Exception('Expected string as filename')
 
     def get_data_from_file(self):
-        file = self._get_file()
+        file = FileHelper._get_file(self)
         data_from_file = file.read()
         file.close()
         return data_from_file

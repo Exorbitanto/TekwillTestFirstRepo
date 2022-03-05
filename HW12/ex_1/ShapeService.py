@@ -23,3 +23,4 @@ class ShapeService:
             shape.inner_color = new_inner_color
             shape.border_color = new_border_color
         return list_of_shapes
+    
