@@ -33,6 +33,14 @@ class Circle(Shape):
             raise Exception("You cannot subtract a bigger object from a lesser one.")
         return Circle(self.inner_color, self.border_color, self.radius - other.radius)
 
+    def __mul__(self, other):
+        if not isinstance(other, Circle) and type(other) != int and type(other) != float:
+            raise Exception("The multiplier should be a number of another object of the same type.")
+        if type(other) != int or type(other) != float:
+            return Circle(self.inner_color, self.border_color, self.radius * other)
+        else:
+            return Circle(self.inner_color, self.border_color, self.radius * other.radius)
+
     @property
     def radius(self):
         return self._radius
