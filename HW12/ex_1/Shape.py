@@ -1,6 +1,22 @@
 class Shape:
 
-    def __init__(self, inner_color=None, border_color=None):
+    @property
+    def inner_color(self):
+        return self._inner_color
+
+    @property
+    def border_color(self):
+        return self._border_color
+
+    @inner_color.setter
+    def inner_color(self, inner_color):
+        self._inner_color = inner_color
+
+    @border_color.setter
+    def border_color(self, border_color):
+        self._border_color = border_color
+
+    def __init__(self, inner_color="white", border_color="black"):
         self._inner_color = inner_color
         self._border_color = border_color
 
@@ -18,18 +34,4 @@ class Shape:
         else:
             return False
 
-    @property
-    def inner_color(self):
-        return self._inner_color
 
-    @property
-    def border_color(self):
-        return self._border_color
-
-    @inner_color.setter
-    def inner_color(self, inner_color):
-        self._inner_color = inner_color
-
-    @border_color.setter
-    def border_color(self, border_color):
-        self._border_color = border_color
